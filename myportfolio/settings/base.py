@@ -11,29 +11,24 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
-import environ
 from pathlib import Path
+from environs import Env
+
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
-
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
-
 # False if not in os.environ because of casting above
-DEBUG = env('DEBUG')
+DEBUG = env.bool("DEBUG", default=False)
 
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env.str("SECRET_KEY")
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 
 
 # Application definition
@@ -107,6 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = '/static/'
 
 
 # Internationalization
