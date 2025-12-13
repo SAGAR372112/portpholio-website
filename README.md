@@ -45,7 +45,7 @@ This project uses these libraries:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/gurmessa/my-portfolio.git
+   git clone https://github.com/SAGAR372112/portpholio-website.git
    cd your-repo
    ```
 
@@ -110,7 +110,7 @@ This project uses these libraries:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/gurmessa/my-portfolio.git
+   git clone https://github.com/SAGAR372112/portpholio-website.git
    cd my-portfolio
    ```
 
@@ -132,20 +132,3 @@ This project uses these libraries:
    * Apply migrations
    * Collect staticfiles
    * Run the Django development server at `http://localhost:8081`
-4. **Update your profile via the admin panel**
-
-
----
-
-## Screenshots
-
-<table>
-  <tr>
-    <td><img src="screenshots/screenshot1.png" alt="Screenshot 1" width="300"/></td>
-    <td><img src="screenshots/screenshot4.png" alt="Screenshot 2" width="300"/></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/screenshot3.png" alt="Screenshot 3" width="300"/></td>
-    <td><img src="screenshots/screenshot2.png" alt="Screenshot 4" width="300"/></td>
-  </tr>
-</table>
