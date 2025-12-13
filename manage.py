@@ -1,16 +1,15 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
 import os
-import environ
 import sys
+from dotenv import load_dotenv
 
+# Load .env file
+load_dotenv()
 
 def main():
     """Run administrative tasks."""
-    environ.Env().read_env()
-
     os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE", os.environ.get("DJANGO_SETTINGS_MODULE", "myportfolio.settings.local")
+        "DJANGO_SETTINGS_MODULE",
+        os.getenv("DJANGO_SETTINGS_MODULE")
     )
     try:
         from django.core.management import execute_from_command_line
@@ -23,5 +22,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
