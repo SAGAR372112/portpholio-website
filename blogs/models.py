@@ -79,4 +79,8 @@ class Blog(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
+
+        if self.status == Blog.StatusChoices.PUBLISHED and not self.published_date:
+            self.published_date = timezone.now()
+            
         super().save(*args, **kwargs)
