@@ -26,7 +26,12 @@ class BlogAdmin(admin.ModelAdmin):
     filter_horizontal = ("tags",)
 
     fieldsets = (
-        (None, {"fields": ("title", "slug", "content", "category", "tags")}),
+        ("Content", {
+            "fields": ("title", "slug", "content", "category", "tags")
+        }),
+        ("Publishing", {
+            "fields": ("status", "published_date"),
+        }),
     )
 
     actions = ["publish_blogs"]
@@ -37,3 +42,4 @@ class BlogAdmin(admin.ModelAdmin):
         self.message_user(request, "Selected blogs have been published.")
 
     publish_blogs.short_description = "Publish selected blogs"
+
