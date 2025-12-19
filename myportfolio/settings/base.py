@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     # Third-party apps
     "ckeditor",
     "solo",
-    "sorl.thumbnail",
     "django_filters",
     "cloudinary",
     "cloudinary_storage",
