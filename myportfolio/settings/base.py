@@ -81,8 +81,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-MEDIA_URL = os.getenv("MEDIA_URL", "/media/")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = os.getenv("MEDIA_URL", "/media/")
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = os.getenv("STATIC_URL", "/static/")
